@@ -59,6 +59,11 @@ concentrations = np.array([float(x.strip()) for x in concentrations.split(',')])
 treatment_cols = st.text_input("Column Indices for Drug Treatments (comma-separated)", "3, 4, 5, 6, 7")
 treatment_cols = np.array([int(x.strip()) for x in treatment_cols.split(',')])
 
+# Check if they match in length
+if len(concentrations) != len(treatment_cols):
+    st.error(f"⚠️ Number of drug concentrations ({len(concentrations)}) does not match the number of treatment columns ({len(treatment_cols)}). Please correct this before proceeding.")
+    st.stop()
+
 # Process and plot data when "Update Plot" is clicked
 if st.button("Update Plot"):
     # Convert DataFrame to numpy array for easy calculations
