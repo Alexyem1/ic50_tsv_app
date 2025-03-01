@@ -49,9 +49,9 @@ st.download_button(
 # Experimental parameters input section
 st.write("### Step 2: Define Experimental Conditions")
 
-neg_control_col = st.number_input("Column Index for Negative Control (no cells, no MTT)", min_value=0, max_value=len(df.columns)-1, value=0)
-no_Drug_no_mtt_col = st.number_input("Column Index for Cells (no Drug, no MTT)", min_value=0, max_value=len(df.columns)-1, value=1)
-no_Drug_with_mtt_col = st.number_input("Column Index for Cells (no Drug, with MTT)", min_value=0, max_value=len(df.columns)-1, value=2)
+neg_control_col = st.number_input("Column Index for Negative Control (-cells (just media), +MTT)", min_value=0, max_value=len(df.columns)-1, value=0)
+no_Drug_no_mtt_col = st.number_input("Column Index for Cells (+cells, -Drug, -MTT)", min_value=0, max_value=len(df.columns)-1, value=1)
+no_Drug_with_mtt_col = st.number_input("Column Index for Cells (+cells, -Drug, +MTT)", min_value=0, max_value=len(df.columns)-1, value=2)
 
 concentrations = st.text_input("Enter Drug Concentrations (comma-separated, mg/ml)", "1, 2, 4, 8, 16")
 concentrations = np.array([float(x.strip()) for x in concentrations.split(',')])
