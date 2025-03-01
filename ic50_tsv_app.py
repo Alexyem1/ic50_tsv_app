@@ -49,7 +49,7 @@ st.download_button(
 # Experimental parameters input section
 st.write("### Step 2: Define Experimental Conditions")
 
-neg_control_col = st.number_input("Column Index for Negative Control (-cells (just media), +MTT)", min_value=0, max_value=len(df.columns)-1, value=0)
+neg_control_col = st.number_input("Column Index for Negative Control (-cells, -Drug, +MTT)", min_value=0, max_value=len(df.columns)-1, value=0)
 no_Drug_no_mtt_col = st.number_input("Column Index for Cells (+cells, -Drug, -MTT)", min_value=0, max_value=len(df.columns)-1, value=1)
 no_Drug_with_mtt_col = st.number_input("Column Index for Cells (+cells, -Drug, +MTT)", min_value=0, max_value=len(df.columns)-1, value=2)
 
